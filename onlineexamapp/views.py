@@ -146,3 +146,16 @@ def home(request):
         return render(request, 'home.html', {'exams': not_applied_exams, 'class': True})
     else:
         return redirect("/")    
+
+        # my profile functionality
+
+
+def myprofile(request):
+    # check user session exists
+    if 'user_email' in request.session:
+        email = request.session['user_email']
+        data = User.objects.get(uemail=email)
+        name = data.uname
+        return render(request, 'myprofile.html', {'email': email, 'name': name})
+    else:
+        return redirect("/")
