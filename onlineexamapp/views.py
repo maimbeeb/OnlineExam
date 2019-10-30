@@ -44,8 +44,7 @@ def login(request):
             form = UserLogin()
     return render(request, 'index.html', {'form': form})
 
-
-    # register functionality
+# register functionality
 
 
 def register(request):
@@ -118,7 +117,7 @@ def forget(request):
                     })
         else:
             form = UserForget()
-        return render(request, 'forget-form.html', {'form': form})        
+        return render(request, 'forget-form.html', {'form': form})
 
 # logout functionality
 
@@ -145,9 +144,9 @@ def home(request):
 
         return render(request, 'home.html', {'exams': not_applied_exams, 'class': True})
     else:
-        return redirect("/")    
+        return redirect("/")
 
-        # my profile functionality
+# my profile functionality
 
 
 def myprofile(request):
@@ -159,6 +158,7 @@ def myprofile(request):
         return render(request, 'myprofile.html', {'email': email, 'name': name})
     else:
         return redirect("/")
+
 
 # my applied exams functionality
 
@@ -175,7 +175,6 @@ def myexams(request):
         return render(request, 'myexams.html', {'applied_exams': applied_exams})
     else:
         return redirect("/")
-
 
 # change password functionality
 
@@ -208,6 +207,7 @@ def changepwd(request):
     else:
         return redirect("/")
 
+
 # apply exam functionality
 def apply(request, eno):
     # check user session exists
@@ -230,7 +230,8 @@ def apply(request, eno):
             message = False
         return render(request, 'apply-exam.html', {'exam': exam, 'key': key, 'amount': amount, 'stripeamount': stripeamount, 'examname': examname, 'message': message})
     else:
-        return redirect("/")      
+        return redirect("/")
+
 
 # stripe charge functionality
 def charge(request, eno):
@@ -275,4 +276,4 @@ def charge(request, eno):
         send_mail(subject, message, email_from, recipient_list)
         return redirect('/exam/' + str(eno))
     else:
-        return redirect("/")          
+        return redirect("/")
