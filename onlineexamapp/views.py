@@ -207,3 +207,27 @@ def changepwd(request):
         return render(request, template, {'form': form})
     else:
         return redirect("/")
+
+# apply exam functionality
+def apply(request, eno):
+    # check user session exists
+    if 'user_email' in request.session:
+        exams = [{"eno": 1, "name": "Assessment and Qualifications Alliance (AQA)", "fees": "100", "date": "10-01-2020"}, {"eno": 2, "name": "Oxford, Cambridge and RSA Examinations (OCR)", "fees": "150", "date": "15-01-2020"}, {"eno": 3, "name": "Edexcel (Edexcel Pearson - London Examinations)", "fees": "100", "date": "20-01-2020"}, {
+            "eno": 4, "name": "Welsh Joint Education Committee (WJEC)", "fees": "150", "date": "25-01-2020"}, {"eno": 5, "name": "Council for the Curriculum, Examinations & Assessment (CCEA)", "fees": "100", "date": "30-01-2020"}]
+        for x in exams:
+            if eno == x['eno']:
+                exam = x
+        amount = int(exam['fees'])
+        stripeamount = int(exam['fees']) * 100
+        examname = exam['name'] + 'charge'
+        key = settings.STRIPE_PUBLISHABLE_KEY
+        myexams = UserExam.objects.filter(
+            uemail=request.session['user_email']).values_list('eno', flat=True)
+
+        if str(eno) in list(myexams):
+            message = True
+        else:
+            message = False
+        return render(request, 'apply-exam.html', {'exam': exam, 'key': key, 'amount': amount, 'stripeamount': stripeamount, 'examname': examname, 'message': message})
+    else:
+        return redirect("/")        
