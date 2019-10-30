@@ -1,0 +1,109 @@
+body {
+  background: #ced4da;
+}
+
+.login-form {
+  border: 2px solid #a9b1b8;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.login-title {
+  text-transform: uppercase;
+  padding-top: 7px;
+}
+
+.login-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}
+
+.profile-form {
+  border: 2px solid #a9b1b8;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.profile-title {
+  text-transform: uppercase;
+  padding-top: 7px;
+}
+
+.profile-sbmt-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}
+
+.register-form {
+  border: 2px solid #a9b1b8;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.register-title {
+  text-transform: uppercase;
+  padding-top: 7px;
+}
+
+.register-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}
+
+.forget-form {
+  border: 2px solid #a9b1b8;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.forget-title {
+  text-transform: uppercase;
+  padding-top: 7px;
+}
+
+.forgot-sbmt-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}
+
+.payment-form {
+  border: 2px solid #a9b1b8;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.payment-title {
+  text-transform: uppercase;
+  padding-top: 7px;
+}
+
+.payment-sbmt-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}
+
+.custom-modal-header {
+  background-color: #ced4da;
+  border-bottom: 1px solid #486a8e;
+}
+
+.custom-modal-body {
+  background-color: #ced4da;
+}
+
+.modal-sbmt-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}
+
+.search-btn {
+  border-color: #486a8e;
+  background-color: #486a8e;
+  color: #fff;
+}

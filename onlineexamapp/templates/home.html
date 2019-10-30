@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/home">Online Exam</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/myprofile">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/myexams">My Exams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0 need-validation" validate>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            required
+          />
+          <button class="btn search-btn my-2 my-sm-0" type="submit">
+            SEARCH
+          </button>
+        </form> -->
+      </div>
+    </nav>
+    <div class="row mt-3">
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <table class="table table-bordered table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Exam</th>
+                <th scope="col">Fees</th>
+                <th scope="col">Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if exams %} {% for exam in exams %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ exam.name }}</td>
+                <td>${{ exam.fees }}</td>
+                <td>{{ exam.date }}</td>
+                <td>
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0 text-white"
+                    onclick="window.location.href='/exam/{{ exam.eno }}'"
+                  >
+                    APPLY
+                  </button>
+                </td>
+              </tr>
+              {% endfor %} {% else %}
+              <tr>
+                <td colspan="5" align="center">No exams to display.</td>
+              </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

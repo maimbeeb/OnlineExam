@@ -1,0 +1,93 @@
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-lg-7 col-md-8">
+    <div class="register-form mt-5">
+      <h4 class="register-title text-center">ONLINE EXAM REGISTER</h4>
+      <form action="" method="POST" class="needs-validation mt-3" novalidate>
+        {% csrf_token %} {% if error_message %}
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>Error!</strong> {{ error_message }}
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %} {% if success_message %}
+        <div
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>Note!</strong> Registration successful. Please
+          <a href="/">login</a> with your details.
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %}
+        <div class="form-group row justify-content-center">
+          <label
+            for="{{ form.uname.id_for_label }}"
+            class="col-sm-5 col-form-label"
+            >Name<span class="text-red">*</span></label
+          >
+          <div class="col-sm-6">
+            {{ form.uname | as_crispy_field }}
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <label
+            for="{{ form.uemail.id_for_label }}"
+            class="col-sm-5 col-form-label"
+            >Email<span class="text-red">*</span></label
+          >
+          <div class="col-sm-6">
+            {{ form.uemail | as_crispy_field }}
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <label
+            for="{{ form.upwd.id_for_label }}"
+            class="col-sm-5 col-form-label"
+            >Password<span class="text-red">*</span></label
+          >
+          <div class="col-sm-6">
+            {{ form.upwd | as_crispy_field }}
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <label
+            for="{{ form.ucpwd.id_for_label }}"
+            class="col-sm-5 col-form-label"
+            >Confirm Password<span class="text-red">*</span></label
+          >
+          <div class="col-sm-6">
+            {{ form.ucpwd | as_crispy_field }}
+          </div>
+        </div>
+        <div class="form-group row justify-content-center pt-2">
+          <div class="col-sm-6 text-center">
+            <button type="submit" class="btn btn-primary register-btn">
+              REGISTER
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="text-center">
+        <p>Already have an account ? <a href="/">Click Here</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

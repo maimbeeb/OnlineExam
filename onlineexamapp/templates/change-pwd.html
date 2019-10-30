@@ -1,0 +1,114 @@
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/home">Online Exam</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/myprofile">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/myexams">My Exams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0 need-validation" validate>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            required
+          />
+          <button class="btn search-btn my-2 my-sm-0" type="submit">
+            SEARCH
+          </button>
+        </form> -->
+      </div>
+    </nav>
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+        <div class="profile-form mt-5">
+          <h4 class="profile-title text-center">Change Password</h4>
+          <form
+            action="/changepwd"
+            method="POST"
+            class="needs-validation mt-3"
+            novalidate
+          >
+            {% csrf_token %} {% if error_message %}
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              role="alert"
+            >
+              <strong>Error!</strong> {{ error_message }}
+              <button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %} {% if success_message %}
+            <div
+              class="alert alert-success alert-dismissible fade show"
+              role="alert"
+            >
+              <strong>Error!</strong> {{ success_message }}
+              <button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+            <div class="form-group row justify-content-center">
+              <label for="pwd" class="col-sm-5 col-form-label"
+                >Old Password<span class="text-red">*</span></label
+              >
+              <div class="col-sm-6">
+                {{ form.upwd | as_crispy_field }}
+              </div>
+            </div>
+            <div class="form-group row justify-content-center">
+              <label for="new-pwd" class="col-sm-5 col-form-label"
+                >New Password<span class="text-red">*</span></label
+              >
+              <div class="col-sm-6">
+                {{ form.unpwd | as_crispy_field }}
+              </div>
+            </div>
+            <div class="form-group row text-center pt-2">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary modal-sbmt-btn">
+                  SUBMIT
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

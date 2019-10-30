@@ -1,0 +1,100 @@
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/home">Online Exam</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/myprofile">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/myexams">My Exams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0 need-validation" validate>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            required
+          />
+          <button class="btn search-btn my-2 my-sm-0" type="submit">
+            SEARCH
+          </button>
+        </form> -->
+      </div>
+    </nav>
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+        <div class="profile-form mt-5">
+          <h4 class="profile-title text-center">MY PROFILE</h4>
+          <form
+            action=""
+            method="POST"
+            class="needs-validation mt-3"
+            novalidate
+          >
+            <div class="form-group row justify-content-center">
+              <label for="name" class="col-sm-3 col-form-label">Name</label>
+              <div class="col-sm-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Name"
+                  value="{{ name }}"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="form-group row justify-content-center">
+              <label for="email" class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-6">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  value="{{ email }}"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="text-center">
+              <p>
+                <a href="/changepwd">Change Password ?</a>
+              </p>
+            </div>
+            <!-- <div class="form-group row justify-content-center pt-2">
+              <div class="col-sm-6 text-center">
+                <button type="submit" class="btn btn-primary profile-sbmt-btn">
+                  UPDATE
+                </button>
+              </div>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
