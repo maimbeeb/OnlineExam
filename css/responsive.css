@@ -1,0 +1,8 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  .register-text {
+    font-size: 14px;
+  }
+  .forgot-text {
+    font-size: 14px;
+  }
+}
