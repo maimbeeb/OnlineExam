@@ -83,3 +83,39 @@ def register(request):
         else:
             form = UserRegister()
         return render(request, 'register.html', {'form': form})
+
+# forget password fuctionality
+
+
+def forget(request):
+    # check user session exists
+    if "user_email"in request.session:
+        return redirect("/home")
+    else:
+        template = 'forget-form.html'
+        if request.method == "POST":
+            form = UserForget(request.POST)
+            if form.is_valid():
+                # check email already exists
+                if User.objects.filter(uemail=form.cleaned_data['uemail']).exists():
+                    data = User.objects.get(uemail=form.cleaned_data['uemail'])
+
+                    # send_mail to user email
+                    subject = 'Online Exam - Forget Password'
+                    message = 'Hi ' + data.uname + '\n\nYour password is ' + data.upwd
+                    email_from = settings.EMAIL_HOST_USER
+                    recipient_list = [form.cleaned_data['uemail']]
+                    send_mail(subject, message, email_from, recipient_list)
+                    form = UserForget()
+                    return render(request, template, {
+                        'form': form,
+                        'success_message': 'Your password is successfully sent to your email.'
+                    })
+                else:
+                    return render(request, template, {
+                        'form': form,
+                        'error_message': 'Email not exists!'
+                    })
+        else:
+            form = UserForget()
+        return render(request, 'forget-form.html', {'form': form})        
