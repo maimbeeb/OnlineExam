@@ -230,4 +230,49 @@ def apply(request, eno):
             message = False
         return render(request, 'apply-exam.html', {'exam': exam, 'key': key, 'amount': amount, 'stripeamount': stripeamount, 'examname': examname, 'message': message})
     else:
-        return redirect("/")        
+        return redirect("/")      
+
+# stripe charge functionality
+def charge(request, eno):
+    # check user session exists
+    if 'user_email' in request.session:
+        exams = [{"eno": 1, "name": "Assessment and Qualifications Alliance (AQA)", "fees": "100", "date": "10-01-2020"}, {"eno": 2, "name": "Oxford, Cambridge and RSA Examinations (OCR)", "fees": "150", "date": "15-01-2020"}, {"eno": 3, "name": "Edexcel (Edexcel Pearson - London Examinations)", "fees": "100", "date": "20-01-2020"}, {
+            "eno": 4, "name": "Welsh Joint Education Committee (WJEC)", "fees": "150", "date": "25-01-2020"}, {"eno": 5, "name": "Council for the Curriculum, Examinations & Assessment (CCEA)", "fees": "100", "date": "30-01-2020"}]
+        for x in exams:
+            if eno == x['eno']:
+                exam = x
+
+        amount = int(exam['fees']) * 100
+        examname = exam['name']
+        if request.method == 'POST':
+            charge = stripe.Charge.create(
+                amount=amount,
+                currency='usd',
+                description=examname + "charge",
+                source=request.POST['stripeToken']
+            )
+        key = settings.STRIPE_PUBLISHABLE_KEY
+        user_detail = User.objects.get(uemail=request.session['user_email'])
+        user_exam = UserExam(
+            eno=eno,
+            uemail=request.session['user_email'],
+            uname=user_detail.uname,
+            exname=examname,
+            amount=int(exam['fees']),
+            currency='usd',
+            stripetoken=request.POST['stripeToken'],
+            charge_response=charge
+        )
+        # save user applied exams in db
+        user_exam.save()
+        subject = 'Online Exam - Applied for ' + examname
+        message = 'Hi ' + user_detail.uname + ',\n\nYou have applied for ' + examname + \
+            '\n\nFor later, your hall ticket will be send to your email address.'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [request.session['user_email']]
+
+        # send mail to user for exam details
+        send_mail(subject, message, email_from, recipient_list)
+        return redirect('/exam/' + str(eno))
+    else:
+        return redirect("/")          
