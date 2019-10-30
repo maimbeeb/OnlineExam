@@ -119,3 +119,13 @@ def forget(request):
         else:
             form = UserForget()
         return render(request, 'forget-form.html', {'form': form})        
+
+# logout functionality
+
+
+def logout(request):
+
+    if 'user_email' in request.session:
+        # delete user session
+        del request.session['user_email']
+    return redirect('/')
