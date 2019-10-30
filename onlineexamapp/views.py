@@ -159,3 +159,19 @@ def myprofile(request):
         return render(request, 'myprofile.html', {'email': email, 'name': name})
     else:
         return redirect("/")
+
+# my applied exams functionality
+
+
+def myexams(request):
+    # check user session exists
+    if 'user_email' in request.session:
+        exams = [{"eno": 1, "name": "Assessment and Qualifications Alliance (AQA)", "fees": "100", "date": "10-01-2020"}, {"eno": 2, "name": "Oxford, Cambridge and RSA Examinations (OCR)", "fees": "150", "date": "15-01-2020"}, {"eno": 3, "name": "Edexcel (Edexcel Pearson - London Examinations)", "fees": "100", "date": "20-01-2020"}, {
+            "eno": 4, "name": "Welsh Joint Education Committee (WJEC)", "fees": "150", "date": "25-01-2020"}, {"eno": 5, "name": "Council for the Curriculum, Examinations & Assessment (CCEA)", "fees": "100", "date": "30-01-2020"}]
+
+        myexams = UserExam.objects.filter(
+            uemail=request.session['user_email']).values_list('eno', flat=True)
+        applied_exams = [e for e in exams if str(e['eno']) in list(myexams)]
+        return render(request, 'myexams.html', {'applied_exams': applied_exams})
+    else:
+        return redirect("/")
