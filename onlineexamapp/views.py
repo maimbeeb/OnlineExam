@@ -175,3 +175,35 @@ def myexams(request):
         return render(request, 'myexams.html', {'applied_exams': applied_exams})
     else:
         return redirect("/")
+
+
+# change password functionality
+
+
+def changepwd(request):
+    # check user session exists
+    if 'user_email' in request.session:
+        template = 'change-pwd.html'
+        if request.method == "POST":
+            form = UserChangePwd(request.POST)
+            if form.is_valid():
+                if User.objects.filter(upwd=form.cleaned_data['upwd']).exists():
+                    user = User.objects.get(
+                        uemail=request.session['user_email'])
+                    user.upwd = form.cleaned_data['unpwd']
+                    user.save()
+                    form = UserChangePwd()
+                    return render(request, template, {
+                        'form': form,
+                        'success_message': 'Your password successfully changed.'
+                    })
+                else:
+                    return render(request, template, {
+                        'form': form,
+                        'error_message': 'Old password incorrect!'
+                    })
+        else:
+            form = UserChangePwd()
+        return render(request, template, {'form': form})
+    else:
+        return redirect("/")
