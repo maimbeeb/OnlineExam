@@ -43,3 +43,43 @@ def login(request):
         else:
             form = UserLogin()
     return render(request, 'index.html', {'form': form})
+
+
+    # register functionality
+
+
+def register(request):
+    # check user session exists
+    if "user_email"in request.session:
+        return redirect("/home")
+    else:
+        template = 'register.html'
+        if request.method == "POST":
+            form = UserRegister(request.POST)
+            if form.is_valid():
+                # check email already exists
+                if User.objects.filter(uemail=form.cleaned_data['uemail']).exists():
+                    return render(request, template, {
+                        'form': form,
+                        'error_message': 'Email already exists.'
+                    })
+                elif form.cleaned_data['upwd'] != form.cleaned_data['ucpwd']:
+                    return render(request, template, {
+                        'form': form,
+                        'error_message': 'Passwords do not match.'
+                    })
+                else:
+                    # Create the user:
+                    user = User(
+                        uname=form.cleaned_data['uname'],
+                        uemail=form.cleaned_data['uemail'],
+                        upwd=form.cleaned_data['upwd']
+                    )
+                    user.save()
+                    return render(request, template, {
+                        'form': form,
+                        'success_message': True
+                    })
+        else:
+            form = UserRegister()
+        return render(request, 'register.html', {'form': form})
