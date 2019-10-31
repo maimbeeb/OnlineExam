@@ -87,96 +87,107 @@
 	Existing features
 		
 	'Login Screen'   
-		- User needs to provide is login crendetials i.e Email and Password.
-		  empty 
-		  email format correct
-		  User should be registerd.
+		- User needs to provide login crendetials i.e Email and Password.
+		- If the Email is left blank while submission will display a wrong icon. 
+		- If the Email format is not correct while submission will display a wrong icon.
+				
+		- If the Password is left blank while submission will display a wrong icon. 
+		- If the Password is not correct while submission will display a wrong icon.
+		  
+		- If the User details is not registered it will throw following error
+		  "Error! Invalid username or password!"
 		
-		- password 
-		  empty 
-		  User should be registerd.
-		
-		- Error! Invalid username or password!
+		- If the user is registered it will redirect to the Home screen.
 		
 	'Forget Password Screen'.
+		- EmailId need to be provied by the user to send the forgot password details.
+		- If the Email is left blank while submission will display a wrong icon. 
+		- If the Email format is not correct while submission will display a wrong icon.
+		- If the EmailId doesn't exist it will throw following error
+		  "Error! Email not exists!"
+		- If the User details is not registered it will throw following error
+		  "Error! Email not exists!"
 
-		- email provided by the user should be correct
-			empty 
-		  email format correct
-		  User should be registerd.
-		  not correct email Error! Email not exists!		
-		  Click Here - back to the login screen.
-		
-		- User is needed to provide a valid email id to
-		  Error! Your password is successfully sent to your email.
-		  Will get the email with password to login.
+		- Once the registered user provides the valid email id, it will show following message
+		  "Your password is successfully sent to your email."
 		  
-		  Click Here - back to the login screen.
+		- Registered user will get the email with password.
+			  
+		- User can click on "Click Here" link to get back to the login screen.
 		  
 		
 	'Registration Screen'
-
-		- User needs to provide is login crendetials i.e Email and Password.
-		  empty 
-		  email format correct
-		  User should be registerd.
+		- User needs to provide the following details for registration:
+			Name 
+			Email
+			Password
+			Confirm Password
 		
-		- password 
-		  empty 
-		  User should be registerd.
+		- If any of the field left empty while submission will display a wrong icon.
+		- If the Email is left blank while submission will display a wrong icon. 
+		- If the Email format is not correct while submission will display a wrong icon.
+		- If the EmailId doesn't exist it will throw following error
+		  "Error! Email not exists!"
+		- If the EmailId already exist it will throw following error
+		  "Error! Email already exists."
+		- If the Password and Confirm Password doesn't match it will throw following error
+		  "Error! Passwords do not match."
+		- If the user is registered successfully it will show a successful message.
 		
-		- Error! Invalid username or password!	
-		Error! Email already exists.
+	'MyProfile Screen' 
+		- MyProfile Screen will show the following details of the user and it is uneditable.
+			Name
+			Email
+		- The Screen has "change password" link
 		
-		Error! Passwords do not match.
+	'Change Password Screen' 
+		- Change Password Screen show the following details.
+			old password 
+			new password.
+		- The user should enter the valid Old password and provide a New password to change the password.
 		
-		
-
-	' MyProfile Screen'       
-		- Name
-		- Email
-		not editable..
-		change password link
-		
-	'Change Password Screen'        
-		old password 
-		new password.
+	'Home Screen'
+		- Home screen has a table with the list of Exams user can apply with the following details:
+		  List of Exams, Fees, Date and Action.
+		- Home screen has a apply button to apply for exams.
 		
 	'My Exams Screen' 
-		All the exams that is applied by users.
+		- My Exams Screen has a table with the list of following details:
+		  List of Exams, Fees, Date and Action.
+		- This screen shows all the exams that is applied by users.
 		
-	'Apply Exams Screen'    
+	'Apply Exams Screen'  
 
-arun.karthik11@gmail.com
-4242 4242 4242 4242
-123
-12 / 20
-Exam details will be send to the user registered email.
-	
+		- Apply Exams Screen will provide the following details:
+		  Name, Date, Fees.
+		- Apply Exams Screen will have apply button to apply for exams.
 
-	'Payment Screen'      
+	'Payment Screen'   
 
-arun.karthik11@gmail.com
-4242 4242 4242 4242
-123
-12 / 20	
-		
+		- Payment Screen will provide the following details:
+		  Name, CardNumber, Card expiry Date, Cvc.
+		- User need to provide the valid details to do the Strip Payment:
+			EmailId
+			Card Number {4242 4242 4242 4242}
+			Card expiry Date {12 / 20}
+			Cvc {123}
+		- Exam details will be send to the user registered email once applied successfull
 		
 	'Logout'        
-		- when user click it it comes to login screen.
+		- Logout button is available for the user to logout the session.
 
 	Features left to implement
 
-	Allow the User to take the online Exam after registration.
+		- Allow the User to take the online Exam after registration.
 	
 ## Technologies Used
 
 	Git 
-		This project uses command line to for regular commits and to push my project to github
+		This project uses command line to do regular commits and to push the project to github
 	Github 
-		This project uses to remotely store project code and allow public to see my website
+		This project uses to remotely store project code and allow public to see the website
 	Heroku
-		This application is hosted via AWS
+		This application is hosted via Heroku
 		
 		
 	Front-End Technologies:
@@ -204,16 +215,16 @@ arun.karthik11@gmail.com
 		This project uses Python to provide the backend functionality of the cookbook, 
 		including functions to add, edit or delete a recipe.	
 	MySql Client { Version: 1.13.4 }
-		This project uses PyMongo which is a MongoDB driver for Python, used to access 
-		the MongoDB database.
+		This project uses MySql Client which is a driver for MySql, used to access 
+		the MySql database.
 	JSON
 		This project uses JSON to provide the core data for the cookbook, 
 		including recipes, users, categories, etc.
 	Django { Version: 2.2.6 }
-		This project uses the Flask microframework to bring the frontend and 
+		This project uses the Django framework to bring the frontend and 
 		backend of the application together.
 	MySQL
-		This project uses MongoDB which is used to contain the database collections.
+		This project uses MySQL which is used to contain the tables.
 	Font Awesome
 		This project uses Font Awesome to provide icons for the application.
 		
@@ -222,39 +233,7 @@ arun.karthik11@gmail.com
 
 	1) Manual Tests
 	
-		This web application has been manually tested with different scenarios 
-		that the user may experience.
-		
-		Homepage
-		Enter the AWS URL it will be directed to homepage.
-		
-		Filter By Recipes Name
-		Enter the RecipeName Click on 'SEARCH' button, the appropriate Recipe is filtered.
-		
-		Clear the Recipes Name
-		Click on 'CLEAR' button, the search result of the Recipe is cleared.
-		
-		View Recipe
-		Click on Image of the Recipe
-		Be directed to the Recipe page and be shown all details of the recipe, 
-		including the ingredients, method and image.
-		
-		Add Recipe
-		Click on 'ADD RECIPE' button
-		Fill in all details in the form and click 'SAVE RECIPE'.
-		Be redirected to the homepage.
-		
-		Edit Recipe
-		click on 'EDIT RECIPE' when viewing a recipe card.
-		Edit any details within the form.
-		Click on 'SAVE Recipe' and be redirected to homepage.
-		Click on 'Back' and be redirected to homepage.
-		
-		Delete Recipe
-		Click on 'REMOVE' when viewing a recipe card.
-		It will show a pop up to confirm, once confirmed.
-		The recipe will be deleted from the database.
-		Return To Homepage
+		The feature details provided in the FEATURES section is tested Manually.
 	
 	2) Responsiveness Testing
 	
@@ -268,8 +247,8 @@ arun.karthik11@gmail.com
 
 ## Deployment
 	
-The source code for this application can be found on [Github](https://github.com/maimbeeb/Cook-Book/) 
-and the application itself has been deployed onto Heroku
+The source code for this application can be found on [Github](https://github.com/maimbeeb/OnlineExam) 
+and the application itself has been deployed onto Heroku [Heroku](https://lit-dusk-54430.herokuapp.com/) 
 There is no difference between the GitHub code and the code in the live application. 
 
 It can be installed with the following steps:
@@ -293,6 +272,7 @@ It can be installed with the following steps:
 	
 ## Credits
 	
+	Got the Idea from Online examination system used by Companies.
 	Referred to the python documentation.
 	Refered to the Django docs as well which have been a huge help.
 	Thanks to mentor for planning and helping with the projects.
@@ -301,6 +281,6 @@ It can be installed with the following steps:
 	
 	Acknowledgements
 	
-	This project was based on a brief written by Code Institute to fulfil requirements of their 
+	This project was based on a brief written by Code Institute to fulfill requirements of their 
 	Full Stack Frameworks With Django!(part of the Full Stack Web Developer course).
 
