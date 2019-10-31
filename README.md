@@ -10,20 +10,34 @@
 	In an online Exam Registration system, the user get userid and password by registering 
 	their details in the site. This userId is used to authenticate the user when student login 
 	to the site.
-		
+	
+	
 ## UX
-
-![](mockup/home.png)
 	
 	Mariam's Munch takes on a modern design by implementing features from the bootstrap.css framework.
 	The application was designed to work just as well on devices with small screens as those with larger ones.
 
 	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, 
 	the recipe title, description, duration and chef's name.
+	
+### Add Recipe
+
+![](wireframes/login.png)
+
+	The user is redirected to this page when they would like to add a recipe of their own. 
+	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
+	icons to guide the user.
+
+	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
+	The user has the option to add as many ingredients (with respective amounts) as they'd like.
+	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
+	and cook the recipe.
+
+	A dropdown is provided for the cuisine and the category.
 		
 ### Add Recipe
 
-![](mockup/add-recipe.png)
+![](wireframes/forget-pwd.png)
 
 	The user is redirected to this page when they would like to add a recipe of their own. 
 	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
@@ -38,7 +52,7 @@
 
 ### Edit Recipe
 
-![](mockup/edit-recipe.png)
+![](wireframes/registration.png)
 		
 	This page mimics many of the properties of the add recipe page, to help the user identify 
 	which fields they would like to update faster.
@@ -47,10 +61,68 @@
 
 ### Delete Recipe
 
+![](wireframes/myprofile.png)
+
 	The user also has the option to delete a recipe from the page, to prevent users accidentally 
 	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
 	recipe is permanently deleted from the database.
+	
+### Add Recipe
+
+![](wireframes/home.png)
+
+	The user is redirected to this page when they would like to add a recipe of their own. 
+	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
+	icons to guide the user.
+
+	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
+	The user has the option to add as many ingredients (with respective amounts) as they'd like.
+	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
+	and cook the recipe.
+
+	A dropdown is provided for the cuisine and the category.
+
+### Edit Recipe
+
+![](wireframes/change-pwd.png)
 		
+	This page mimics many of the properties of the add recipe page, to help the user identify 
+	which fields they would like to update faster.
+
+	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
+
+### Delete Recipe
+
+![](wireframes/myexams.png)
+
+	The user also has the option to delete a recipe from the page, to prevent users accidentally 
+	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
+	recipe is permanently deleted from the database.
+	
+### Add Recipe
+
+![](wireframes/apply-exam.png)
+
+	The user is redirected to this page when they would like to add a recipe of their own. 
+	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
+	icons to guide the user.
+
+	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
+	The user has the option to add as many ingredients (with respective amounts) as they'd like.
+	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
+	and cook the recipe.
+
+	A dropdown is provided for the cuisine and the category.
+
+### Edit Recipe
+
+![](wireframes/payment.png)
+		
+	This page mimics many of the properties of the add recipe page, to help the user identify 
+	which fields they would like to update faster.
+
+	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
+	
 ## FEATURES
 	
 	Existing features
