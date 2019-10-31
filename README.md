@@ -7,10 +7,9 @@
 	
 	Almost all organizations now-a-days, are conducting their exams online as it saves time for 
 	student and get results in less time. It also helps the environment by saving paper. 
-	In an online Exam Registration system, the user get userid and password by registering 
-	their details in the site. This userId is used to authenticate the user when student login 
-	to the site.
-	
+	In an online Exam Registration system, the user get his/her email as userid and password by 
+	registering their details in the site. This user email is used to authenticate the user when 
+	student login to the site.
 	
 ## UX
 	
@@ -21,16 +20,16 @@
 
 ![](wireframes/login.png)
 
-	The user will be redirected to the login page while visiting the site.
-	The user needs to enter their credentials to login to the Online Exam Registration System. 
-	Login page is provied with "Register Here" and "Forgot Password ?" link for users.
+	The user will be redirected to Login Screen while visiting the site.
+	The user needs to enter their email and password to login to the Online Exam Registration System. 
+	Login Screen is provied with "Register Here" and "Forgot Password ?" link for users.
 	
 		
 ### Forget Password Screen
 
 ![](wireframes/forget-pwd.png)
 
-	If the user forgets his password, and clicks on the "Forgot Password ?" link.
+	If the user forgot his/her password, he/she needs to click on the "Forgot Password ?" link.
 	It will be redirected to the Forget Password Screen.
 
 
@@ -38,73 +37,137 @@
 
 ![](wireframes/registration.png)
 		
-	If the User is visiting the Site first time, and doesn't have the login credentials.
-	User can register himself by clicking on the Registration Link.
+	If the user is visiting for the first time, and doesn't have the login credentials.
+	user can register himself by clicking on the Registration Link.
 
 ### MyProfile Screen
 
 ![](wireframes/myprofile.png)
 
-	The user profile is shown in the screen.
+	The user MyProfile screen to show the User Name and Email.
+	The screen has change password link.
 	
 ### Home Screen
 
 ![](wireframes/home.png)
 
-	The User home screen is shown.
+	To user Home screen has a table with the list of following details:
+	List of Exams, Fees, Date and Status.
 
 ### Change Password Screen
 
 ![](wireframes/change-pwd.png)
 		
-	The user is allowed to change the password.
+	The user is allowed to change the password in Change Password Screen. 
+	The user need to enter his valid old password and provide a new password.
 
 ### My Exams Screen
 
 ![](wireframes/myexams.png)
 
-	The page will show the list exams registered by the user.
+	My Exams Screen has a table with the list of following details:
+	List of Exams, Fees, Date and Status.
 	
 ### Apply Exams Screen
 
 ![](wireframes/apply-exam.png)
 
-	The page shows the list of exams available and the user want to chose the exam from the list.
+	Apply Exams Screen shows the detail about the exam
+	Name of the Exam, Fees and Date of the exam, with the apply button.
 
 ### Payment Screen
 
 ![](wireframes/payment.png)
 		
-	This allows the user the pay for the exam from the Stripe account.
+	Payment Screen allows the user to pay for the exam fee from the Stripe account, using the following details:
+	EmailId, CardNumber, Month/Date and CVC.
 	
 ## FEATURES
 	
 	Existing features
 		
 	'Login Screen'   
-		- When the URL is entered it will always bring the user to the home page
+		- User needs to provide is login crendetials i.e Email and Password.
+		  empty 
+		  email format correct
+		  User should be registerd.
 		
-	'Forget Password Screen'  
-		- "Button" when clicked, it will allows the user to add new recipe
-	'Registration Screen'      
-		- "Button" when clicked, it will allows user to search recipes by Recipe Name.
+		- password 
+		  empty 
+		  User should be registerd.
+		
+		- Error! Invalid username or password!
+		
+	'Forget Password Screen'.
+
+		- email provided by the user should be correct
+			empty 
+		  email format correct
+		  User should be registerd.
+		  not correct email Error! Email not exists!		
+		  Click Here - back to the login screen.
+		
+		- User is needed to provide a valid email id to
+		  Error! Your password is successfully sent to your email.
+		  Will get the email with password to login.
+		  
+		  Click Here - back to the login screen.
+		  
+		
+	'Registration Screen'
+
+		- User needs to provide is login crendetials i.e Email and Password.
+		  empty 
+		  email format correct
+		  User should be registerd.
+		
+		- password 
+		  empty 
+		  User should be registerd.
+		
+		- Error! Invalid username or password!	
+		Error! Email already exists.
+		
+		Error! Passwords do not match.
+		
+		
+
 	' MyProfile Screen'       
-		- "Button" when clicked, it will allows user to clear the Search.
+		- Name
+		- Email
+		not editable..
+		change password link
+		
 	'Change Password Screen'        
-		- "Button" when clicked, will bring to individual recipe page
+		old password 
+		new password.
+		
 	'My Exams Screen' 
-		- Click on the Image of the particular recipe and make changes by 
-					clicking the "Button".
-	'Apply Exams Screen'      
-		- Click on the Image of the particular recipe and it has button to remove 
-					particular recipe
-	'Payment Screen'        
-		- "Button" when clicked, will bring to back to home page from Edit recipe page.
+		All the exams that is applied by users.
+		
+	'Apply Exams Screen'    
+
+arun.karthik11@gmail.com
+4242 4242 4242 4242
+123
+12 / 20
+Exam details will be send to the user registered email.
+	
+
+	'Payment Screen'      
+
+arun.karthik11@gmail.com
+4242 4242 4242 4242
+123
+12 / 20	
+		
+		
+	'Logout'        
+		- when user click it it comes to login screen.
 
 	Features left to implement
 
-	Feature that will allow user remove or edit(make changes) only its own recipes - 
-	but not others users recipes.
+	Allow the User to take the online Exam after registration.
 	
 ## Technologies Used
 
@@ -140,24 +203,19 @@
 	Python { Version: 3.7.4 }
 		This project uses Python to provide the backend functionality of the cookbook, 
 		including functions to add, edit or delete a recipe.	
-	PyMongo { Version: 3.9.0 }
+	MySql Client { Version: 1.13.4 }
 		This project uses PyMongo which is a MongoDB driver for Python, used to access 
 		the MongoDB database.
 	JSON
 		This project uses JSON to provide the core data for the cookbook, 
 		including recipes, users, categories, etc.
-	Flask { Version: 1.1.1 }
+	Django { Version: 2.2.6 }
 		This project uses the Flask microframework to bring the frontend and 
 		backend of the application together.
-	MongoDB
+	MySQL
 		This project uses MongoDB which is used to contain the database collections.
 	Font Awesome
 		This project uses Font Awesome to provide icons for the application.
-	Jinja 
-		This project uses to display back-end data to the front-end
-	BSON ObjectId - 
-		This project uses to allow to create and parse ObjectIDs without a reference to the 
-		MongoDB or bson modules
 		
 			
 ## Testing
@@ -225,10 +283,8 @@ It can be installed with the following steps:
     ```
  - Enter your credentials for heroku.com
     ```
-    sudo pip3 install Flask
-    sudo pip3 install pymongo
-    sudo pip3 freeze --local > requirements.txt
-    echo web: python run.py > Procfile
+    pip3 freeze --local > requirements.txt
+    echo web: python manage.py runserver host port > Procfile
     git add .
     git commit -m "initial commit"
     git push -u heroku master
@@ -238,13 +294,13 @@ It can be installed with the following steps:
 ## Credits
 	
 	Referred to the python documentation.
-	Refered to the flask docs as well which have been a huge help.
+	Refered to the Django docs as well which have been a huge help.
 	Thanks to mentor for planning and helping with the projects.
 	A tutorial has been taken from Youtube.
 	Many resources have been consulted online (stackoverflow, pyhton pep8, blogs, etc).
 	
 	Acknowledgements
 	
-	This project was based on a brief written by Code Institute to fulfil requirements of their Data 
-	Centric Development module (part of the Full Stack Web Developer course).
+	This project was based on a brief written by Code Institute to fulfil requirements of their 
+	Full Stack Frameworks With Django!(part of the Full Stack Web Developer course).
 
