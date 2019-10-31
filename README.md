@@ -1,10 +1,15 @@
 # Online Exam Registration System
 		
-	Online Exam Registration System is a project designed to make the Online Exam Registration System reliable and efficient with enhanced security. aminer, but also imparts a better examination time management strategy. 
+	Online Exam Registration System is a project designed to make the Online Exam Registration 
+	reliable with enhanced security. This system provides the student an efficient management 
+	strategy to chose their exams. Online Exams has become a fast growing options for companies 
+	because of its speed and accuracy. It needs less manpower to execute the examination. 
 	
-	Online Examination System has become a fast growing examination method because of its speed and accuracy. It is also needed less manpower to execute the examination. Almost all organizations now-a-days, are conducting their exams by online examination system, it saves students time in examinations and get results in less time. It also helps the environment by saving paper. 
-
-	What is an online examination system? In an online examination system examine get their user id and password with his/her admit card. This id is already saved in the examination server. When examine login to the server he/she get his/her profile already register. On the certain time examine gets the message to start the examination. 
+	Almost all organizations now-a-days, are conducting their exams online as it saves time for 
+	student and get results in less time. It also helps the environment by saving paper. 
+	In an online Exam Registration system, the user get userid and password by registering 
+	their details in the site. This userId is used to authenticate the user when student login 
+	to the site.
 		
 ## UX
 
