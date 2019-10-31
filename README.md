@@ -14,129 +14,92 @@
 	
 ## UX
 	
-	Mariam's Munch takes on a modern design by implementing features from the bootstrap.css framework.
+	Online Exam Registration System is designed by implementing features from the bootstrap.css framework.
 	The application was designed to work just as well on devices with small screens as those with larger ones.
-
-	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, 
-	the recipe title, description, duration and chef's name.
 	
-### Add Recipe
+### Login Screen
 
 ![](wireframes/login.png)
 
-	The user is redirected to this page when they would like to add a recipe of their own. 
-	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
-	icons to guide the user.
-
-	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
-	The user has the option to add as many ingredients (with respective amounts) as they'd like.
-	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
-	and cook the recipe.
-
-	A dropdown is provided for the cuisine and the category.
+	The user will be redirected to the login page while visiting the site.
+	The user needs to enter their credentials to login to the Online Exam Registration System. 
+	Login page is provied with "Register Here" and "Forgot Password ?" link for users.
+	
 		
-### Add Recipe
+### Forget Password Screen
 
 ![](wireframes/forget-pwd.png)
 
-	The user is redirected to this page when they would like to add a recipe of their own. 
-	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
-	icons to guide the user.
+	If the user forgets his password, and clicks on the "Forgot Password ?" link.
+	It will be redirected to the Forget Password Screen.
 
-	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
-	The user has the option to add as many ingredients (with respective amounts) as they'd like.
-	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
-	and cook the recipe.
 
-	A dropdown is provided for the cuisine and the category.
-
-### Edit Recipe
+### Registration Screen
 
 ![](wireframes/registration.png)
 		
-	This page mimics many of the properties of the add recipe page, to help the user identify 
-	which fields they would like to update faster.
+	If the User is visiting the Site first time, and doesn't have the login credentials.
+	User can register himself by clicking on the Registration Link.
 
-	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
-
-### Delete Recipe
+### MyProfile Screen
 
 ![](wireframes/myprofile.png)
 
-	The user also has the option to delete a recipe from the page, to prevent users accidentally 
-	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
-	recipe is permanently deleted from the database.
+	The user profile is shown in the screen.
 	
-### Add Recipe
+### Home Screen
 
 ![](wireframes/home.png)
 
-	The user is redirected to this page when they would like to add a recipe of their own. 
-	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
-	icons to guide the user.
+	The User home screen is shown.
 
-	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
-	The user has the option to add as many ingredients (with respective amounts) as they'd like.
-	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
-	and cook the recipe.
-
-	A dropdown is provided for the cuisine and the category.
-
-### Edit Recipe
+### Change Password Screen
 
 ![](wireframes/change-pwd.png)
 		
-	This page mimics many of the properties of the add recipe page, to help the user identify 
-	which fields they would like to update faster.
+	The user is allowed to change the password.
 
-	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
-
-### Delete Recipe
+### My Exams Screen
 
 ![](wireframes/myexams.png)
 
-	The user also has the option to delete a recipe from the page, to prevent users accidentally 
-	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
-	recipe is permanently deleted from the database.
+	The page will show the list exams registered by the user.
 	
-### Add Recipe
+### Apply Exams Screen
 
 ![](wireframes/apply-exam.png)
 
-	The user is redirected to this page when they would like to add a recipe of their own. 
-	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
-	icons to guide the user.
+	The page shows the list of exams available and the user want to chose the exam from the list.
 
-	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
-	The user has the option to add as many ingredients (with respective amounts) as they'd like.
-	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
-	and cook the recipe.
-
-	A dropdown is provided for the cuisine and the category.
-
-### Edit Recipe
+### Payment Screen
 
 ![](wireframes/payment.png)
 		
-	This page mimics many of the properties of the add recipe page, to help the user identify 
-	which fields they would like to update faster.
-
-	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
+	This allows the user the pay for the exam from the Stripe account.
 	
 ## FEATURES
 	
 	Existing features
 		
-	'COOK-BOOK'   - When the URL is entered it will always bring the user to the home page
-	'Add Recipe'  - "Button" when clicked, it will allows the user to add new recipe
-	'Search'      - "Button" when clicked, it will allows user to search recipes by Recipe Name.
-	'Clear'       - "Button" when clicked, it will allows user to clear the Search.
-	'View'        - "Button" when clicked, will bring to individual recipe page
-	'Edit Recipe' - Click on the Image of the particular recipe and make changes by 
+	'Login Screen'   
+		- When the URL is entered it will always bring the user to the home page
+		
+	'Forget Password Screen'  
+		- "Button" when clicked, it will allows the user to add new recipe
+	'Registration Screen'      
+		- "Button" when clicked, it will allows user to search recipes by Recipe Name.
+	' MyProfile Screen'       
+		- "Button" when clicked, it will allows user to clear the Search.
+	'Change Password Screen'        
+		- "Button" when clicked, will bring to individual recipe page
+	'My Exams Screen' 
+		- Click on the Image of the particular recipe and make changes by 
 					clicking the "Button".
-	'Remove'      - Click on the Image of the particular recipe and it has button to remove 
+	'Apply Exams Screen'      
+		- Click on the Image of the particular recipe and it has button to remove 
 					particular recipe
-	'Back'        - "Button" when clicked, will bring to back to home page from Edit recipe page.
+	'Payment Screen'        
+		- "Button" when clicked, will bring to back to home page from Edit recipe page.
 
 	Features left to implement
 
@@ -149,7 +112,7 @@
 		This project uses command line to for regular commits and to push my project to github
 	Github 
 		This project uses to remotely store project code and allow public to see my website
-	AWS
+	Heroku
 		This application is hosted via AWS
 		
 		
