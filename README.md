@@ -96,104 +96,115 @@
 ### Existing features
 		
 * Login Screen 
-
-		- User needs to provide login credentials i.e Email and Password.
+	* Success scenario
+		- User needs to provide login credentials i.e Registered Email and Password.
+		- If the user is registered it will redirect to the Home screen.
+		- User can click on "Register Here" link to Register himself.
+		- User can click on "Forgot Password ?" link to get his/her password in registered email.
+	* Failure scenario
 		- If the Email is left blank while submission it will display a wrong icon. 
-		- If the Email format is not correct while submission it will display a wrong icon.
-				
+		- If the Email format is not correct while submission it will display a wrong icon.	
 		- If the Password is left blank while submission it will display a wrong icon. 
 		- If the Password is not correct while submission it will display a wrong icon.
-		  
 		- If the User details are not registered it will throw the following error
 		  "Error! Invalid username or password!"
-		
-		- If the user is registered it will redirect to the Home screen.
-		
+		  
 * Forget Password Screen
-
+	* Success scenario
 		- EmailId need to be provided by the user to send the forgot password details.
+		- Once the registered user provides the valid email id, it will show following message
+		  "Your password is successfully sent to your email."
+		- Registered user will get the email with Password Details.
+		- User can login to the site with User EmailId and provided password in Email.
+		- User can click on "Click Here" link to get back to the login screen.
+	* Failure scenario
 		- If the Email is left blank while submission it will display a wrong icon. 
 		- If the Email format is not correct while submission it will display a wrong icon.
 		- If the EmailId doesn't exist it will throw the following error
 		  "Error! Email not exists!"
 		- If the User details are not registered it will throw the following error
-		  "Error! Email not exists!"
-
-		- Once the registered user provides the valid email id, it will show following message
-		  "Your password is successfully sent to your email."
-		  
-		- Registered user will get the email with password link.
-			  
-		- User can click on "Click Here" link to get back to the login screen.
-		  
+		  "Error! Email not exists!" 
 		
 * Registration Screen
-
+	* Success scenario
 		- User needs to provide the following details for registration:
-			Name 
-			Email
-			Password
-			Confirm Password
-		
+			-Name 
+			-Email
+			-Password
+			-Confirm Password
+		- Email has to be in the Email format ex: "abc@der.com"
+		- No Format has been followed for Name and Password
+		- Password and Confirm Password needs to be same.
+		- If the user is registered successfully it will show a successful message.
+	* Failure scenario		
 		- If any of the fields are left empty while submission it will display a wrong icon.
 		- If the Email is left blank while submission it will display a wrong icon. 
 		- If the Email format is not correct while submission it will display a wrong icon.
+		- If the Password is left blank while submission it will display a wrong icon. 
 		- If the EmailId doesn't exist it will throw the following error
 		  "Error! Email not exists!"
 		- If the EmailId already exist it will throw the following error
 		  "Error! Email already exists."
 		- If the Password and Confirm Password don't match it will throw the following error
 		  "Error! Passwords do not match."
-		- If the user is registered successfully it will show a successful message.
 		
 * MyProfile Screen
-
+	* Success scenario
 		- MyProfile Screen will show the following details of the user and it is uneditable.
 			Name
 			Email
-		- The Screen has "change password" link
+		- User can click on "Change Password" link to get to Change Password Page.
 		
 * Change Password Screen
-
+	* Success scenario
 		- Change Password Screen shows the following details.
 			old password 
 			new password.
 		- The user should enter the valid old password and provide a new password to change the password.
-		
-* Home Screen
+	* Failure scenario
+		- If the Password and Confirm Password don't match it will throw the following error
+		  "Error! Passwords do not match."
 
+* Home Screen
+	* Success scenario
 		- Home screen has a table with the list of exams user can apply with the following details:
-		  List of Exams, Fees, Date and Action.
-		- Home screen has an apply button to apply for exams.
+		  	List of Exams, Fees, Date and Action.
+		- Home screen has an "apply" button to apply for exams.
 		
 * My Exams Screen
-
+	* Success scenario
 		- My Exams Screen has a table with the list of following details:
 		  List of Exams, Fees, Date and Action.
 		- This screen shows all the exams that is applied by users.
 		
 * Apply Exams Screen
-
+	* Success scenario
 		- Apply Exams Screen will provide the following details:
 		  Name, Date, Fees.
 		- Apply Exams Screen will have apply button to apply for exams.
 
 * Payment Screen  
-
+	* Success scenario
 		- Payment Screen will provide the following details:
-		  Name, CardNumber, Card expiry Date, Cvc.
+		  	Name, CardNumber, Card expiry Date, Cvc.
 		- User need to provide the valid details to do the Stripe Payment:
 			EmailId
 			Card Number {4242 4242 4242 4242}
 			Card expiry Date {12 / 20}
 			Cvc {123}
 		- Exam details will be send to the users registered email once applied successfully
+	* Failure scenario
+		- If the User provides any of the following details incorrect, the Stripe Payment won't occur:
+			EmailId
+			Card Number {4242 4242 4242 4242}
+			Card expiry Date {12 / 20}
+			Cvc {123}
 		
 * Logout      
+	* Success scenario
+		- Logout section is available in the Navbar to logout the user session.
 
-		- Logout button is available for the user to logout the session.
-
-* Features left to implement
+### Features left to implement
 
 		- Allow the User to take the online Exam after registration.
 	
@@ -240,7 +251,7 @@
 
 	1) Manual Tests
 	
-		The feature details provided in the FEATURES section is tested Manually.
+		The Successful and Failure scenario provided in FEATURES section is tested Manually.
 	
 	2) Responsiveness Testing
 	
