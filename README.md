@@ -93,9 +93,10 @@
 	
 ## <a name="features"></a>Features
 	
-	Existing features
+### Existing features
 		
-	'Login Screen'   
+* Login Screen 
+
 		- User needs to provide login credentials i.e Email and Password.
 		- If the Email is left blank while submission it will display a wrong icon. 
 		- If the Email format is not correct while submission it will display a wrong icon.
@@ -108,7 +109,8 @@
 		
 		- If the user is registered it will redirect to the Home screen.
 		
-	'Forget Password Screen'.
+* Forget Password Screen
+
 		- EmailId need to be provided by the user to send the forgot password details.
 		- If the Email is left blank while submission it will display a wrong icon. 
 		- If the Email format is not correct while submission it will display a wrong icon.
@@ -125,7 +127,8 @@
 		- User can click on "Click Here" link to get back to the login screen.
 		  
 		
-	'Registration Screen'
+* Registration Screen
+
 		- User needs to provide the following details for registration:
 			Name 
 			Email
@@ -143,35 +146,39 @@
 		  "Error! Passwords do not match."
 		- If the user is registered successfully it will show a successful message.
 		
-	'MyProfile Screen' 
+* MyProfile Screen
+
 		- MyProfile Screen will show the following details of the user and it is uneditable.
 			Name
 			Email
 		- The Screen has "change password" link
 		
-	'Change Password Screen' 
+* Change Password Screen
+
 		- Change Password Screen shows the following details.
 			old password 
 			new password.
 		- The user should enter the valid old password and provide a new password to change the password.
 		
-	'Home Screen'
+* Home Screen
+
 		- Home screen has a table with the list of exams user can apply with the following details:
 		  List of Exams, Fees, Date and Action.
 		- Home screen has an apply button to apply for exams.
 		
-	'My Exams Screen' 
+* My Exams Screen
+
 		- My Exams Screen has a table with the list of following details:
 		  List of Exams, Fees, Date and Action.
 		- This screen shows all the exams that is applied by users.
 		
-	'Apply Exams Screen'  
+* Apply Exams Screen
 
 		- Apply Exams Screen will provide the following details:
 		  Name, Date, Fees.
 		- Apply Exams Screen will have apply button to apply for exams.
 
-	'Payment Screen'   
+* Payment Screen  
 
 		- Payment Screen will provide the following details:
 		  Name, CardNumber, Card expiry Date, Cvc.
@@ -182,10 +189,11 @@
 			Cvc {123}
 		- Exam details will be send to the users registered email once applied successfully
 		
-	'Logout'        
+* Logout      
+
 		- Logout button is available for the user to logout the session.
 
-	Features left to implement
+* Features left to implement
 
 		- Allow the User to take the online Exam after registration.
 	
