@@ -11,7 +11,16 @@
 	registering their details in the site. This user email is used to authenticate the user when 
 	students login to the site.
 	
-## UX
+## Table of Contents
+
+1. [UX](#ux)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
+
+## <a name="ux"></a>UX
 	
 	Online Exam Registration System is designed by implementing features from the bootstrap.css framework.
 	The application was designed to work just as well on devices with small screens as those with larger ones.
@@ -82,7 +91,7 @@
 	Payment Screen allows the user to pay for the exam fee from the Stripe account, using the following details:
 	EmailId, CardNumber, Month/Date and CVC.
 	
-## FEATURES
+## <a name="features"></a>Features
 	
 	Existing features
 		
@@ -180,7 +189,7 @@
 
 		- Allow the User to take the online Exam after registration.
 	
-## Technologies Used
+## <a name="technologies-used"></a>Technologies Used
 
 	Git : This project uses command line to do regular commits and to push the project to github
 	Github : This project uses to remotely store project code and allow public to see the website
@@ -219,7 +228,7 @@
 	Font Awesome : This project uses Font Awesome to provide icons for the application.
 		
 			
-## Testing
+## <a name="testing"></a>Testing
 
 	1) Manual Tests
 	
@@ -235,7 +244,7 @@
 		The HTML, CSS and JavaScript code for this application has been run through and 
 		validated by bootstrap with JS.
 
-## Deployment
+## <a name="deployment"></a>Deployment
 	
 The source code for this application can be found on [Github](https://github.com/maimbeeb/OnlineExam) 
 and the application itself has been deployed onto Heroku [Heroku](https://lit-dusk-54430.herokuapp.com/) 
@@ -260,7 +269,7 @@ It can be installed with the following steps:
     ```
  - Application is live at Heroku.
 	
-## Credits
+## <a name="credits"></a>Credits
 	
 	Got the Idea from Online examination system used by Companies.
 	Referred to the python documentation.
